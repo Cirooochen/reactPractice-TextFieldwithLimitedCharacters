@@ -18,7 +18,7 @@ const App = () => {
     if (savedNote) setText(savedNote);
   }, []);
 
-  //when change happens
+  //when change happens, this Timeout gives a bit buffering, and then saved the input to localStorage
   useEffect(() => {
     setTimeout(() => {
       setStatus("✅Saved!");
@@ -26,6 +26,7 @@ const App = () => {
     }, 1500);
   }, [text]);
 
+  //clearbutton function
   const clearNote = () => {
     setText("");
     setStatus("Cleared");
